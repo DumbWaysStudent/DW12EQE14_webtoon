@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
         flex : 1
     },
     // style Title Webton
-
     card_title_top : {
         marginTop: 200,
     },
