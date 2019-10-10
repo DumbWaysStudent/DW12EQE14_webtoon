@@ -198,7 +198,7 @@ export default class Login extends React.Component {
                               
                         </Item>
                         <Icon onPress= {this.state.iconEye == 'eye' ? this.eyeOff : this.eyeOn } style = {styles.icon}  active name={this.state.iconEye} />
-                        <Button block  disabled = {this.state.buttonDisabled} onPress = {this.registration}>
+                        <Button block  disabled = {this.state.buttonDisabled} onPress = {() => this.props.navigation.navigate('Foryou')}>
                             <Text>Log In</Text>
                         </Button>
                     </Form>
