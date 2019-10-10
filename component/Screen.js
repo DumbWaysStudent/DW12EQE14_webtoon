@@ -161,7 +161,7 @@ export default class For_you extends React.Component {
                 {this.state.banners.map((image) => (
                   <View style={styles.ScrollViewCon} key={image.image}>
                     <TouchableOpacity
-                      onPress={() => this.props.navigation.navigate('Detail_webton', { item: image.image })}>
+                      onPress={() => this.props.navigation.navigate('Detail_webton', { item: image.image, title: image.title })}>
                       <Image style={styles.ScrollViewImg} source={{ uri: image.image }} />
                     </TouchableOpacity>
                     <Text>{image.title}</Text>

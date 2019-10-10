@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Image, Dimensions } from 'react-native';
+import { StyleSheet, Image, Dimensions, TouchableOpacity } from 'react-native';
 
 import { Container, Row, Card, CardItem, Thumbnail, Text, View, Header, Left, Body, Right, Button, Icon, Title, Content } from 'native-base';
 
@@ -24,22 +24,46 @@ const styles = StyleSheet.create({
   }
 });
 class Detail_webton extends Component {
+  constructor() {
+    super()
+    this.state = {
+      banners: [{
+        episode: 3,
+        title: 'The Secret of Angel',
+        image: 'https://i.pinimg.com/originals/43/52/cd/4352cd7b6ee6fe01f3811607af837751.jpg'
+      }, {
+        episode: 2,
+        title: 'Pasutri Gaje',
+        image: 'https://i.pinimg.com/originals/7e/0d/97/7e0d97b4cf0b6310c8a254d47afb24df.jpg'
+      }, {
+        episode: 1,
+        title: 'Young Mom',
+        image: 'https://i.pinimg.com/originals/bc/68/fa/bc68fa7dcc4bfbd0b5d8f58a1f4b554c.jpg'
+      }]
+    }
+  }
   render() {
     const { navigation } = this.props;
     return (
       <Container>
         <Card style={{ flex: 0 }}>
-          <Image style={{ resizeMode: 'cover', width: BannerWidth, height: 200 }} source={require('../asset/image/image_1.jpg')} />
+          <Image style={{ resizeMode: 'cover', width: BannerWidth, height: 200 }} source={{ uri: navigation.getParam('item') }} />
         </Card>
         <Content>
           <Card style={{ flex: 0 }}>
-            <Row>
-              <Image style={styles.image_episode} source={require('../asset/image/image_1.jpg')} />
-              <Text style={styles.text_episode} >Episode 2   {"\n"} {"\n"} banaa</Text>
-            </Row>
+            {this.state.banners.map((item) => (
+              <Row>
+                <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate('DetailEpisode', { title: item.title })}>
+                  <Image style={styles.image_episode} source={{ uri: item.image }} />
+                </TouchableOpacity>
+
+                <Text style={styles.text_episode} >Episode {item.episode}   {"\n"} {"\n"} {item.title}</Text>
+              </Row>
+            ))}
           </Card>
         </Content>
-      </Container>
+      </Container >
     );
   }
 }
