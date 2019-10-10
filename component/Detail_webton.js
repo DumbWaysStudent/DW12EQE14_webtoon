@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Image, Dimensions } from 'react-native';
 
 import { Container, Row, Card, CardItem, Thumbnail, Text, View, Header, Left, Body, Right, Button, Icon, Title, Content } from 'native-base';
-import Share from "./Fab";
+
 const BannerWidth = Dimensions.get('window').width;
 const BannerHigh = Dimensions.get('window').height;
 const styles = StyleSheet.create({
@@ -33,18 +33,6 @@ class Detail_webton extends Component {
         </Card>
         <Content>
           <Card style={{ flex: 0 }}>
-            <Row>
-              <Image style={styles.image_episode} source={require('../asset/image/image_1.jpg')} />
-              <Text style={styles.text_episode} >Episode 2   {"\n"} {"\n"} banaa</Text>
-            </Row>
-            <Row>
-              <Image style={styles.image_episode} source={require('../asset/image/image_1.jpg')} />
-              <Text style={styles.text_episode} >Episode 2   {"\n"} {"\n"} banaa</Text>
-            </Row>
-            <Row>
-              <Image style={styles.image_episode} source={require('../asset/image/image_1.jpg')} />
-              <Text style={styles.text_episode} >Episode 2   {"\n"} {"\n"} banaa</Text>
-            </Row>
             <Row>
               <Image style={styles.image_episode} source={require('../asset/image/image_1.jpg')} />
               <Text style={styles.text_episode} >Episode 2   {"\n"} {"\n"} banaa</Text>
