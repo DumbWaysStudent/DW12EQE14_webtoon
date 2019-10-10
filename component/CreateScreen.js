@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Image } from 'react-native';
-import { Container, Row, Text, Card, Content, View, CardItem } from 'native-base';
+import Icon from 'react-native-vector-icons/FontAwesome'
+import { Container, Row, Fab, Text, Card, Content, Button, View, CardItem } from 'native-base';
 
 
 class CreateScreen extends Component {
@@ -36,6 +37,12 @@ class CreateScreen extends Component {
                                 </Row>
                             </View>
                         ))}
+
+                        <Button rounded style={{ width: 50, height: 50, marginTop: 170, marginLeft: 260 }}>
+                            <Icon type="FontAwesome" name="plus" style={{ fontSize: 25, color: 'white', marginLeft: 15 }} />
+                        </Button>
+
+
                     </View>
                 </Content>
 
