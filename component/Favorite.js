@@ -5,6 +5,7 @@ import {
     StyleSheet,
     Dimensions,
     Image,
+    TouchableOpacity
 } from 'react-native';
 import {
     Container,
@@ -148,11 +149,14 @@ export default class For_you extends React.Component {
                         {this.state.banners.map((image) => (
                             <View style={styles.all_cont} key={image.image}>
                                 <Row>
-                                    <Image style={styles.all_img} source={{ uri: image.image }} />
+                                    <TouchableOpacity onPress={() => this.props.navigation.navigate('MyWebton')}>
+                                        <Image style={styles.all_img} source={{ uri: image.image }} />
+                                    </TouchableOpacity>
                                     <View style={styles.all_des}>
                                         <Text style={styles.AllTitle}>{image.title}</Text>
                                         <Text>{image.favorite} + Favorite </Text>
                                     </View>
+
                                 </Row>
                             </View>
                         ))}

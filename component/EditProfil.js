@@ -47,18 +47,18 @@ const styles = StyleSheet.create({
     }
 
 });
-export default class Profile extends React.Component {
+export default class Edit extends React.Component {
 
     render() {
         return (
             <Container>
                 <Header>
                     <Body>
-                        <Title>Profil</Title>
+                        <Title>Edit Profil</Title>
                     </Body>
                     <Right>
-                        <Button onPress={() => this.props.navigation.navigate('Edit')}>
-                            <Icon type="FontsAwesome" style={{ fontSize: 30, color: 'white' }} name="pencil" />
+                        <Button onPress={() => this.props.navigation.navigate('Profil')}>
+                            <Icon type="FontsAwesome" name="check" style={{ fontSize: 30, color: 'white' }} />
                         </Button>
                     </Right>
                 </Header>
@@ -67,12 +67,6 @@ export default class Profile extends React.Component {
                         <Thumbnail style={styles.ProfilImg} large source={{ uri: "https://facebook.github.io/react-native/docs/assets/favicon.png" }} />
                     </View>
                     <Card>
-                        <CardItem style={styles.ProfileName}>
-                            <Text>Google Plus</Text>
-                            <Right>
-                                <Icon type="FontAwesome" name="arrow-circle-right" style={{ fontSize: 30 }} />
-                            </Right>
-                        </CardItem>
                         <CardItem style={styles.ProfileName}>
                             <Text>Log Out</Text>
                         </CardItem>

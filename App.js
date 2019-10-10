@@ -9,6 +9,8 @@ import DetailWebton from './component/Detail_webton'
 import DetailEpisode from './component/DetailEpisodeScreen';
 import Favorite from './component/Favorite';
 import Profil from './component/Profile';
+import Edit from './component/EditProfil';
+import myWebton from './component/CreateScreen';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const SignedIn = createStackNavigator(
@@ -40,8 +42,27 @@ const Foryou = createStackNavigator(
 
     Profil: {
       screen: Profil,
-      title: 'Favorite',
+      title: 'Profil',
       navigationOptions: { header: null },
+    },
+
+    Edit: {
+      screen: Edit,
+      title: 'EditProfil',
+      navigationOptions: { header: null },
+    },
+
+    MyWebton: {
+      screen: myWebton,
+      title: 'Detail_webton',
+      navigationOptions: ({ navigation }) => {
+        const { navigate, getParam } = navigation
+        const title = 'My Webtoon'
+
+        return {
+          headerTitle: title,
+        }
+      }
     },
 
     Detail_webton: {
