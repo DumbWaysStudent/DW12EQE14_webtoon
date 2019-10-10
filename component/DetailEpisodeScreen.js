@@ -28,7 +28,7 @@ class DetailEpisode extends Component {
                 {this.state.banners.map((item) => (
                     <Row>
                         <Card style={{ flex: 0 }}>
-                            <Image style={{ resizeMode: 'cover', width: BannerWidth, height: 200 }} source={{ uri: item.image }} />
+                            <Image style={{ resizeMode: 'cover', width: BannerWidth, height: 200 }} source={require('./../asset/image/image_1.jpg')} />
                         </Card>
                     </Row>
                 ))}

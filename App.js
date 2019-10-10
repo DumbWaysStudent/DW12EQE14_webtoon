@@ -6,7 +6,8 @@ import { createStackNavigator } from 'react-navigation-stack';
 import For_you from "./component/Screen";
 import Login from "./component/Login"
 import DetailWebton from './component/Detail_webton'
-import DetailEpisode from './component/DetailEpisodeScreen'
+import DetailEpisode from './component/DetailEpisodeScreen';
+import Favorite from './component/Favorite';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const SignedIn = createStackNavigator(
@@ -27,6 +28,12 @@ const Foryou = createStackNavigator(
     For_you: {
       screen: For_you,
       title: 'Foryou',
+      navigationOptions: { header: null },
+    },
+
+    Favorite: {
+      screen: Favorite,
+      title: 'Favorite',
       navigationOptions: { header: null },
     },
 

@@ -188,11 +188,11 @@ export default class For_you extends React.Component {
         </Content>
         <Footer>
           <FooterTab>
-            <Button vertical active onPress={() => this.props.navigation.navigate('Favorite')} >
+            <Button vertical active onPress={() => this.props.navigation.navigate('For_you')} >
               <Icon name="apps" />
               <Text>For You</Text>
             </Button>
-            <Button vertical >
+            <Button vertical onPress={() => this.props.navigation.navigate('Favorite')} >
               <Icon name="star-half" />
               <Text>Favorite</Text>
             </Button>
