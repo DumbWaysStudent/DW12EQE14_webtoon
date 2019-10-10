@@ -8,6 +8,7 @@ import Login from "./component/Login"
 import DetailWebton from './component/Detail_webton'
 import DetailEpisode from './component/DetailEpisodeScreen';
 import Favorite from './component/Favorite';
+import Profil from './component/Profile';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const SignedIn = createStackNavigator(
@@ -33,6 +34,12 @@ const Foryou = createStackNavigator(
 
     Favorite: {
       screen: Favorite,
+      title: 'Favorite',
+      navigationOptions: { header: null },
+    },
+
+    Profil: {
+      screen: Profil,
       title: 'Favorite',
       navigationOptions: { header: null },
     },

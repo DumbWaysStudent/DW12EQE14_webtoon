@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Carousel from 'react-native-banner-carousel';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
+
 import {
   View,
   StyleSheet,
@@ -14,7 +17,6 @@ import {
   Footer,
   FooterTab,
   Button,
-  Icon,
   Text,
   Item,
   Input,
@@ -189,15 +191,15 @@ export default class For_you extends React.Component {
         <Footer>
           <FooterTab>
             <Button vertical active onPress={() => this.props.navigation.navigate('For_you')} >
-              <Icon name="apps" />
+              <Icon type="FontAwesome" name="home" style={{ color: 'white', fontSize: 20, }} />
               <Text>For You</Text>
             </Button>
             <Button vertical onPress={() => this.props.navigation.navigate('Favorite')} >
-              <Icon name="star-half" />
+              <Icon type="FontAwesome" name="star" style={{ color: 'white', fontSize: 20, }} />
               <Text>Favorite</Text>
             </Button>
-            <Button vertical>
-              <Icon name="person" />
+            <Button vertical onPress={() => this.props.navigation.navigate('Profil')}>
+              <Icon type="FontAwesome" name="user" style={{ color: 'white', fontSize: 20, }} />
               <Text>Profile</Text>
             </Button>
           </FooterTab>
