@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image } from 'react-native';
+import { Image, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { Container, Row, Fab, Item, Input, Title, Text, Card, Content, Button, View, CardItem } from 'native-base';
 
@@ -38,9 +38,12 @@ class CreateEpisode extends Component {
                         {this.state.banners.map((item) => (
                             <View key={item.image} style={{ marginTop: 20, marginLeft: 10 }}>
                                 <Row>
-                                    <Image style={{ width: 80, height: 80, marginBottom: 5, marginLeft: 2 }} source={{ uri: item.UrlImg }} />
-                                    <Text style={{ marginLeft: 5, fontSize: 20 }}>{item.NameImg}</Text>
+                                    <TouchableOpacity onPress={() => this.props.navigation.navigate('EditEpisode')}>
+                                        <Image style={{ width: 80, height: 80, marginBottom: 5, marginLeft: 2 }} source={{ uri: item.UrlImg }} />
+                                    </TouchableOpacity>
+                                    <Text style={{ marginLeft: 10, marginBottom: 5, fontSize: 20 }}>{item.NameImg}</Text>
                                     <Button danger style={{ marginTop: 40, marginLeft: -80 }}><Text>Delete</Text></Button>
+
                                 </Row>
                             </View>
                         ))}
