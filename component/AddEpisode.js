@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'
-import { Container, Row, Fab, Text, Card, Content, Button, View, CardItem } from 'native-base';
+import { Container, Row, Fab, Item, Input, Title, Text, Card, Content, Button, View, CardItem } from 'native-base';
 
 
 class CreateScreen extends Component {
@@ -27,23 +27,24 @@ class CreateScreen extends Component {
         return (
             <Container>
                 <Content>
-                    <View style={{ marginTop: 10, marginLeft: 10 }}>
+                    <View style={{ marginTop: 10, marginLeft: 10, marginRight: 5 }}>
+                        <Text style={{ marginLeft: 20, marginRight: 20, fontSize: 20, marginBottom: 5 }}>Title</Text>
+                        <Item rounded>
+                            <Input />
+                        </Item>
                         {this.state.banners.map((image) => (
-                            <View key={image.image}>
+                            <View key={image.image} style={{ marginTop: 20, marginLeft: 10 }}>
                                 <Row>
                                     <Image style={{ width: 80, height: 80, marginBottom: 5, marginLeft: 2 }} source={{ uri: image.image }} />
                                     <Text style={{ marginLeft: 5, fontSize: 20 }}>{image.title} {'\n'} {'\n'} {image.episode} Episode (s) </Text>
-
                                 </Row>
                             </View>
                         ))}
-
-                        <Button rounded onPress={() => this.props.navigation.navigate('AddEpisode')} style={{ width: 50, height: 50, marginTop: 170, marginLeft: 260 }}>
-                            <Icon type="FontAwesome" name="plus" style={{ fontSize: 25, color: 'white', marginLeft: 15 }} />
-                        </Button>
-
-
                     </View>
+                    <Button rounded style={{ marginTop: 5, marginLeft: 5, marginRight: 5 }}>
+                        <Icon type="FontAwesome" name="plus" style={{ marginLeft: 30, fontSize: 20, color: 'white' }} />
+                        <Text>Add Episode</Text>
+                    </Button>
                 </Content>
 
             </Container >

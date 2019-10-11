@@ -11,6 +11,7 @@ import Favorite from './component/Favorite';
 import Profil from './component/Profile';
 import Edit from './component/EditProfil';
 import myWebton from './component/CreateScreen';
+import AddEpisode from './component/AddEpisode';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const SignedIn = createStackNavigator(
@@ -61,6 +62,28 @@ const Foryou = createStackNavigator(
 
         return {
           headerTitle: title,
+          headerStyle: {
+            backgroundColor: 'blue',
+            headerTintColor: '#fff',
+          },
+        }
+      }
+    },
+
+    AddEpisode: {
+      screen: AddEpisode,
+      title: 'Add Episode',
+
+
+      navigationOptions: ({ navigation }) => {
+        const title = 'My Webtoon'
+        return {
+          headerTintColor: '#fff',
+          headerTitle: title,
+          headerStyle: {
+            backgroundColor: 'blue',
+          },
+          headerRight: <Icon type="FontAwesome" name="check" style={{ marginRight: 30, fontSize: 20, color: 'white' }} />,
         }
       }
     },

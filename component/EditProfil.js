@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import ImagePicker from 'react-native-image-picker'
+
 import {
     View,
     StyleSheet,
@@ -19,6 +21,7 @@ import {
     Button,
     Text,
     Item,
+    Input,
     Right,
     Thumbnail,
     CardItem,
@@ -43,11 +46,28 @@ const styles = StyleSheet.create({
     },
     ProfileName: {
         borderWidth: 1,
-        borderColor: 'black'
+        borderColor: 'black',
+        height: 40,
+
     }
 
 });
 export default class Edit extends React.Component {
+    state = {
+        photo: null,
+    }
+
+    handleChoosePhoto = () => {
+        const options = {
+            noData: true,
+        }
+        ImagePicker.launchImageLibrary(options, response => {
+            if (response.uri) {
+                this.setState({ photo: response.uri })
+                console.log(response)
+            }
+        })
+    }
 
     render() {
         return (
@@ -57,6 +77,7 @@ export default class Edit extends React.Component {
                         <Title>Edit Profil</Title>
                     </Body>
                     <Right>
+
                         <Button onPress={() => this.props.navigation.navigate('Profil')}>
                             <Icon type="FontsAwesome" name="check" style={{ fontSize: 30, color: 'white' }} />
                         </Button>
@@ -64,11 +85,22 @@ export default class Edit extends React.Component {
                 </Header>
                 <Content>
                     <View >
-                        <Thumbnail style={styles.ProfilImg} large source={{ uri: "https://facebook.github.io/react-native/docs/assets/favicon.png" }} />
+                        <TouchableOpacity onPress={this.handleChoosePhoto}>
+                            {
+                                this.state.photo == null &&
+                                <Thumbnail style={styles.ProfilImg} large source={{ uri: "https://facebook.github.io/react-native/docs/assets/favicon.png" }} />
+                            }
+                            {
+                                this.state.photo != null &&
+                                <Thumbnail style={styles.ProfilImg} large source={{ uri: this.state.photo }} />
+                            }
+
+                            <Icon type="FontAwesome" name="camera" style={{ fontSize: 20, marginLeft: 190, marginTop: -42, marginBottom: 20 }} />
+                        </TouchableOpacity>
                     </View>
-                    <Card>
+                    <Card style={{ marginLeft: 10, marginRight: 10, borderColor: 'none' }}>
                         <CardItem style={styles.ProfileName}>
-                            <Text>Log Out</Text>
+                            <Input placeholder='Syamsul Hadi' />
                         </CardItem>
                     </Card>
                 </Content>

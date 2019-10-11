@@ -149,9 +149,9 @@ export default class For_you extends React.Component {
                         {this.state.banners.map((image) => (
                             <View style={styles.all_cont} key={image.image}>
                                 <Row>
-                                    <TouchableOpacity onPress={() => this.props.navigation.navigate('MyWebton')}>
-                                        <Image style={styles.all_img} source={{ uri: image.image }} />
-                                    </TouchableOpacity>
+
+                                    <Image style={styles.all_img} source={{ uri: image.image }} />
+
                                     <View style={styles.all_des}>
                                         <Text style={styles.AllTitle}>{image.title}</Text>
                                         <Text>{image.favorite} + Favorite </Text>

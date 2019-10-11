@@ -65,12 +65,14 @@ export default class Profile extends React.Component {
                 <Content>
                     <View >
                         <Thumbnail style={styles.ProfilImg} large source={{ uri: "https://facebook.github.io/react-native/docs/assets/favicon.png" }} />
+                        <Text style={{ fontSize: 20, marginBottom: 10, marginTop: -25, marginLeft: 120 }}>Syamsul Hadi</Text>
                     </View>
                     <Card>
                         <CardItem style={styles.ProfileName}>
-                            <Text>Google Plus</Text>
+                            <Text>My Webtoon Creation</Text>
                             <Right>
-                                <Icon type="FontAwesome" name="arrow-circle-right" style={{ fontSize: 30 }} />
+                                <Icon onPress={() => this.props.navigation.navigate('MyWebton')} type="FontAwesome" name="chevron-right" style={{ fontSize: 20 }} />
+
                             </Right>
                         </CardItem>
                         <CardItem style={styles.ProfileName}>
