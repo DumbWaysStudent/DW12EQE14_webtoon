@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image } from 'react-native';
+import { Image, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { Container, Row, Fab, Text, Card, Content, Button, View, CardItem } from 'native-base';
 
@@ -31,9 +31,10 @@ class CreateScreen extends Component {
                         {this.state.banners.map((image) => (
                             <View key={image.image}>
                                 <Row>
-                                    <Image style={{ width: 80, height: 80, marginBottom: 5, marginLeft: 2 }} source={{ uri: image.image }} />
-                                    <Text style={{ marginLeft: 5, fontSize: 20 }}>{image.title} {'\n'} {'\n'} {image.episode} Episode (s) </Text>
-
+                                    <TouchableOpacity onPress={() => this.props.navigation.navigate('EditWebtoon')}>
+                                        <Image style={{ width: 80, height: 80, marginBottom: 5, marginLeft: 2 }} source={{ uri: image.image }} />
+                                        <Text style={{ marginLeft: 5, fontSize: 20 }}>{image.title} {'\n'} {'\n'} {image.episode} Episode (s) </Text>
+                                    </TouchableOpacity>
                                 </Row>
                             </View>
                         ))}

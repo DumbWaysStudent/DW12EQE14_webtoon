@@ -13,6 +13,7 @@ import Edit from './component/EditProfil';
 import myWebton from './component/CreateScreen';
 import AddEpisode from './component/AddEpisode';
 import CreateEpisode from './component/CreateEpisode';
+import EditWebtoon from './component/EditWebtoon';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const SignedIn = createStackNavigator(
@@ -104,6 +105,24 @@ const forYou = createStackNavigator(
       }
       // console.log('nama');
     },
+
+    EditWebtoon: {
+      screen: EditWebtoon,
+      title: 'Edit Webtoon',
+      navigationOptions: ({ navigation }) => {
+        const title = 'Edit Webtoon'
+        return {
+          headerTintColor: '#fff',
+          headerTitle: title,
+          headerStyle: {
+            backgroundColor: 'blue',
+          },
+          headerRight: <Icon type="FontAwesome" name="check" style={{ marginRight: 30, fontSize: 20, color: 'white' }} />,
+        }
+      }
+      // console.log('nama');
+    },
+
 
     Detail_webton: {
       screen: DetailWebton,
