@@ -3,7 +3,7 @@ import { Text, View, Button, LogoTitle, Share, Image } from 'react-native';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createStackNavigator } from 'react-navigation-stack';
-import For_you from "./component/Screen";
+import ForYou from "./component/ForYou";
 import Login from "./component/Login"
 import DetailWebton from './component/Detail_webton'
 import DetailEpisode from './component/DetailEpisodeScreen';
@@ -12,6 +12,7 @@ import Profil from './component/Profile';
 import Edit from './component/EditProfil';
 import myWebton from './component/CreateScreen';
 import AddEpisode from './component/AddEpisode';
+import CreateEpisode from './component/CreateEpisode';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const SignedIn = createStackNavigator(
@@ -27,10 +28,10 @@ const SignedIn = createStackNavigator(
   }
 );
 
-const Foryou = createStackNavigator(
+const forYou = createStackNavigator(
   {
-    For_you: {
-      screen: For_you,
+    Foryou: {
+      screen: ForYou,
       title: 'Foryou',
       navigationOptions: { header: null },
     },
@@ -59,13 +60,12 @@ const Foryou = createStackNavigator(
       navigationOptions: ({ navigation }) => {
         const { navigate, getParam } = navigation
         const title = 'My Webtoon'
-
         return {
           headerTitle: title,
+          headerTintColor: '#fff',
           headerStyle: {
             backgroundColor: 'blue',
-            headerTintColor: '#fff',
-          },
+          }
         }
       }
     },
@@ -73,7 +73,6 @@ const Foryou = createStackNavigator(
     AddEpisode: {
       screen: AddEpisode,
       title: 'Add Episode',
-
 
       navigationOptions: ({ navigation }) => {
         const title = 'My Webtoon'
@@ -86,6 +85,24 @@ const Foryou = createStackNavigator(
           headerRight: <Icon type="FontAwesome" name="check" style={{ marginRight: 30, fontSize: 20, color: 'white' }} />,
         }
       }
+    },
+
+    CreateEpisode: {
+      screen: CreateEpisode,
+      title: 'Episode Episode',
+      navigationOptions: ({ navigation }) => {
+        const title = 'Create Episode'
+        return {
+
+          headerTintColor: '#fff',
+          headerTitle: title,
+          headerStyle: {
+            backgroundColor: 'blue',
+          },
+          headerRight: <Icon type="FontAwesome" name="check" style={{ marginRight: 30, fontSize: 20, color: 'white' }} />,
+        }
+      }
+      // console.log('nama');
     },
 
     Detail_webton: {
@@ -166,7 +183,7 @@ const Foryou = createStackNavigator(
 
 const Switch = createSwitchNavigator({
   SignedIn: SignedIn,
-  Foryou: Foryou,
+  Foryou: forYou,
 },
   {
     initialRouteName: "Foryou",
